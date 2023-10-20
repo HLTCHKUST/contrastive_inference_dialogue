@@ -1,4 +1,4 @@
-# Commonsense Inference in Dialogue
+# Contrastive Learning for Inference in Dialogue
 
 <img src="img/pytorch-logo-dark.png" width="10%"> [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
