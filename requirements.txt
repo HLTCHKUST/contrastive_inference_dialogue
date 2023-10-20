@@ -1,0 +1,9 @@
+numpy==1.21.5
+transformers==4.19.1
+datasets==2.2.1
+thefuzz==0.19.0
+python-Levenshtein==0.12.2
+nltk==3.7
+rouge-score==0.0.4
+fairscale==0.4.6
+git+https://github.com/Maluuba/nlg-eval.git@master

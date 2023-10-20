@@ -1,0 +1,42 @@
+CUDA_VISIBLE_DEVICES=0 python finetune_trainer.py \
+ --learning_rate 1e-4 \
+ --num_train_epochs 5 \
+ --output_dir save/t5-base \
+ --model_name_or_path t5-base \
+ --weight_decay=0.005 \
+ --do_train \
+ --do_eval \
+ --evaluation_strategy="epoch" \
+ --save_strategy="epoch"  \
+ --save_total_limit=5 \
+ --overwrite_output_dir \
+ --gradient_accumulation_steps 16 \
+ --per_device_train_batch_size 4 \
+ --per_device_eval_batch_size 4 \
+ --load_best_model_at_end True \
+ --dataset_name src/data_utils/cicero.py \
+ --dataset_config_name cicero_nlg
+
+
+CUDA_VISIBLE_DEVICES=0 python finetune_trainer.py \
+ --learning_rate 1e-4 \
+ --num_train_epochs 5 \
+ --output_dir save/t5-base-cicero-contrast \
+ --model_name_or_path t5-base \
+ --weight_decay=0.005 \
+ --do_train \
+ --do_eval \
+ --evaluation_strategy="epoch" \
+ --save_strategy="epoch"  \
+ --save_total_limit=5 \
+ --overwrite_output_dir \
+ --gradient_accumulation_steps 16 \
+ --per_device_train_batch_size 4 \
+ --per_device_eval_batch_size 4 \
+ --load_best_model_at_end True \
+ --dataset_name src/data_utils/cicero.py \
+ --dataset_config_name cicero_nlg_contrast \
+ --coef_inbatch 0.5 \
+ --coef_insample 0.5 \
+ --temperature_tau_sample 2.5 \
+ --temperature_tau_batch 0.1 \

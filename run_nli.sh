@@ -1,0 +1,11 @@
+CUDA_VISIBLE_DEVICES=3 python run_nli.py \
+  --model_name_or_path roberta-large \
+  --dataset_name src/data_utils/usnli.py \
+  --dataset_config_name usnli \
+  --do_train \
+  --do_eval \
+  --max_seq_length 526 \
+  --per_device_train_batch_size 16 \
+  --learning_rate 1e-5 \
+  --num_train_epochs 3 \
+  --output_dir save/roberta-large-usnli
